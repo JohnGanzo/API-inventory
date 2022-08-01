@@ -7,7 +7,7 @@ export class UserController {
     static getAll = async(req:Request, res: Response)=>{
         const userRepository = getRepository(User);
         let users;
-
+       
         try {
             users = await userRepository.find({ select: ['id', 'username', 'role'] });
 
@@ -29,7 +29,7 @@ export class UserController {
         const userRepository = getRepository(User);
 
         try {
-            const user = await userRepository.findOneOrFail(id);
+            const user = await userRepository.findOne({where:{id: parseInt(req.params.id)}});
             res.send(user);
         } catch (e) {
             res.status(404).json({message:'Not result'})
@@ -72,7 +72,7 @@ export class UserController {
         const userRepository = getRepository(User);
 
         try {
-            user = await userRepository.findOneOrFail(id);    
+            user = await userRepository.findOne({where:{id: parseInt(req.params.id)}});    
             user.username = username;
             user.role = role;
         } catch (e) {
@@ -102,7 +102,7 @@ export class UserController {
         let user: User;
 
         try {
-            user = await userRepository.findOneOrFail(id);
+            user = await userRepository.findOne({where:{id: parseInt(req.params.id)}});
         } catch (e) {
             return res.status(404).json({message:'User not found'})
         }

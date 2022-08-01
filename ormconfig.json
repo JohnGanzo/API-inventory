@@ -1,20 +1,20 @@
 {
    "type": "mysql",
-   "host": "bvg4n4odyplsivyna7ml-mysql.services.clever-cloud.com",
-   "port": 3306,
-   "username": "ut3yksm9qhwjqjy8",
-   "password": "ACfCYDdZPfgyO8xKyUsC",
-   "database": "bvg4n4odyplsivyna7ml",
+   "host": "--------",
+   "port": 1010,
+   "username": "------",
+   "password": "------",
+   "database": "-------",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/entity/**/*.{.ts,.js}"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "src/migration/**/*.{.ts,.js}"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "src/subscriber/**/*.{.ts,.js}"
    ],
    "cli": {
       "entitiesDir": "src/entity",
